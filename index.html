@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-hearts" id="hearts-container"></div>
+    
+    <div class="language-selector">
+        <button id="lang-en" class="active">EN</button>
+        <span>/</span>
+        <button id="lang-fr">FR</button>
+    </div>
+
+    <main class="container">
+        <div id="proposal-stage" class="stage active">
+            <h1 id="main-title">Will you be my Valentine?</h1>
+            <div class="button-group">
+                <button id="yes-btn" class="btn yes-btn">Yes</button>
+                <button id="no-btn" class="btn no-btn">No</button>
+            </div>
+        </div>
+
+        <div id="success-stage" class="stage">
+            <h1 id="success-title">That's a great choice!</h1>
+            <p id="success-msg">I love you! ❤️</p>
+            <div class="heart-animation">❤️</div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

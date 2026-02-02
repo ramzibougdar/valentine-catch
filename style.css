@@ -1,0 +1,194 @@
+:root {
+    --primary-pink: #ff4d6d;
+    --soft-pink: #ffb3c1;
+    --white: #ffffff;
+    --bg-gradient: linear-gradient(135deg, #fff0f3 0%, #ffccd5 100%);
+    --shadow: 0 10px 30px rgba(255, 77, 109, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-gradient);
+    overflow: hidden;
+    color: #590d22;
+}
+
+.background-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    color: var(--primary-pink);
+    opacity: 0.3;
+    animation: float 15s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.3;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.language-selector button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #a4133c;
+    transition: all 0.3s ease;
+}
+
+.language-selector button.active {
+    color: var(--primary-pink);
+    text-decoration: underline;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    z-index: 5;
+    max-width: 95%;
+    width: 650px;
+    /* Increased from 450px */
+    position: relative;
+    /* Base for absolute positioning of the no button */
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    height: 60px;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+    min-width: 120px;
+}
+
+.yes-btn {
+    background-color: var(--primary-pink);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff758f;
+}
+
+.no-btn {
+    background-color: white;
+    color: var(--primary-pink);
+    border: 2px solid var(--primary-pink);
+    position: relative;
+    transition: transform 0.2s ease-out;
+    z-index: 10;
+}
+
+.stage {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.stage.active {
+    display: block;
+    position: relative;
+    min-height: 400px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heart-animation {
+    font-size: 5rem;
+    animation: pulse 1.5s infinite;
+    margin-top: 1rem;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#success-msg {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
